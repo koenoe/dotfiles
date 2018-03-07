@@ -1,0 +1,21 @@
+[submodule "zsh/custom/plugins/zsh-autosuggestions"]
+	path = zsh/custom/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions
+[submodule "zsh/custom/plugins/zsh-syntax-highlighting"]
+	path = zsh/custom/plugins/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting
+[submodule "zsh/custom/plugins/zsh-vscode"]
+	path = zsh/custom/plugins/zsh-vscode
+	url = https://github.com/qianxinfeng/zsh-vscode
+[submodule "zsh/custom/themes/spaceship-prompt"]
+	path = zsh/custom/themes/spaceship-prompt
+	url = https://github.com/denysdovhan/spaceship-prompt
+[submodule "fonts"]
+	path = fonts
+	url = https://github.com/powerline/fonts.git
+[submodule "rbenv/plugins/rbenv-default-gems"]
+	path = rbenv/plugins/rbenv-default-gems
+	url = https://github.com/rbenv/rbenv-default-gems.git
+[submodule "rbenv/plugins/rbenv-each"]
+	path = rbenv/plugins/rbenv-each
+	url = https://github.com/rbenv/rbenv-each.git
