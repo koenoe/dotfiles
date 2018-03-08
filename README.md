@@ -54,7 +54,7 @@ Use my [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) configuration (aft
 
 ### Visual Studio Code settings
 
-Press `Shift + Alt + D` and use the following Gist ID to import settings and extensions:
+Open the application and press `Shift + Alt + D`, use the following Gist ID to import settings and extensions:
 
 ```bash
 d9dfa4e7c603aac4a84d5ae72c447eb8
