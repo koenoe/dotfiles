@@ -23,7 +23,7 @@ It's not advised to install NVM by using Homebrew, so:
 ./nvm/install.sh
 ```
 
-### Rbenv configuration + Latest stable Ruby
+### Rbenv configuration + latest stable Ruby
 
 ```bash
 ./rbenv/setup.sh
