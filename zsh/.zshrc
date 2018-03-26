@@ -62,13 +62,13 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-	npm
-	nvm
+  npm
+  nvm
   rbenv
+  z
   zsh-autosuggestions
   zsh-syntax-highlighting
   zsh-vscode
-  z
 )
 
 source $ZSH/oh-my-zsh.sh
