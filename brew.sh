@@ -26,6 +26,7 @@ brew install moreutils
 
 brew install fontconfig
 brew install git
+brew install git-extras
 brew install python
 brew install rbenv
 brew install speedtest-cli
