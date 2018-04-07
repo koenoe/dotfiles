@@ -128,12 +128,14 @@ module.exports = {
   //   `@company/project`
   //   `project#1.0.1`
   plugins: [
+		'gitrocket',
 		'hyper-monokai',
 		'hyper-nobold',
 		'hyper-stylesheet',
 		'hypercwd',
 		'hyperline',
 		'hyperterm-tabs',
+		// This needs to be the last one
 		'hyper-final-say'
 	],
 
