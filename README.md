@@ -59,3 +59,9 @@ Open the application and press `Shift + Alt + D`, use the following Gist ID to i
 ```bash
 d9dfa4e7c603aac4a84d5ae72c447eb8
 ```
+
+### Hyper settings
+
+```bash
+./hyper/setup.sh
+```

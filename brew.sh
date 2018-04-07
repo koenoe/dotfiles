@@ -40,6 +40,7 @@ brew cask install cocoarestclient
 brew cask install daisydisk
 brew cask install dropbox
 brew cask install google-chrome
+brew cask install hyper
 brew cask install iterm2-beta
 brew cask install mounty
 brew cask install mpv
