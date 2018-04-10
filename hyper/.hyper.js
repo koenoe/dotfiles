@@ -134,6 +134,7 @@ module.exports = {
 		'hypercwd',
 		'hypergravity',
 		'hyperline',
+		'hyperlinks',
 		'hyperterm-tabs',
 		// This needs to be the last one
 		'hyper-final-say'
