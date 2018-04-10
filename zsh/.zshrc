@@ -61,11 +61,12 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
+	git
 	git-extras
-  git
   npm
   nvm
   rbenv
+	yarn
   z
   zsh-autosuggestions
   zsh-syntax-highlighting
