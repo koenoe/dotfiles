@@ -129,7 +129,6 @@ module.exports = {
   //   `project#1.0.1`
   plugins: [
 		'hyper-monokai',
-		'hyper-nobold',
 		'hyper-stylesheet',
 		'hypercwd',
 		'hypergravity',
@@ -137,6 +136,7 @@ module.exports = {
 		'hyperlinks',
 		'hyperterm-tabs',
 		// This needs to be the last one
+		'hyper-nobold',
 		'hyper-final-say'
 	],
 

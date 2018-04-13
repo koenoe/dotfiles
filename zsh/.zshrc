@@ -74,3 +74,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
+
+# tabtab source for yarn package
+# uninstall by removing these lines or running `tabtab uninstall yarn`
+[[ -f /Users/koen/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/koen/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
