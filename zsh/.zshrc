@@ -78,3 +78,7 @@ source $ZSH/oh-my-zsh.sh
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
 [[ -f /Users/koen/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/koen/.config/yarn/global/node_modules/tabtab/.completions/yarn.zsh
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

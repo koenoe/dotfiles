@@ -44,14 +44,10 @@ brew cask install hyper
 brew cask install iterm2-beta
 brew cask install mounty
 brew cask install mpv
-brew cask install ngrok
 brew cask install padbury-clock
 brew cask install sabnzbd
-brew cask install sequel-pro
-brew cask install sketch
 brew cask install skype
 brew cask install slack-beta
-brew cask install soulseek
 brew cask install spectacle
 brew cask install spotify
 brew cask install the-unarchiver
