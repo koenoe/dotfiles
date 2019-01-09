@@ -35,6 +35,7 @@ brew install zsh
 
 # Casks
 brew cask install 1password
+brew cask install alfred
 brew cask install bartender
 brew cask install cocoarestclient
 brew cask install daisydisk
@@ -44,7 +45,6 @@ brew cask install hyper
 brew cask install iterm2-beta
 brew cask install mounty
 brew cask install mpv
-brew cask install padbury-clock
 brew cask install sabnzbd
 brew cask install skype
 brew cask install slack-beta
