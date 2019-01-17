@@ -33,6 +33,18 @@ brew install speedtest-cli
 brew install ssh-copy-id
 brew install zsh
 
+# QMK software
+brew tap osx-cross/avr
+brew tap PX4/homebrew-px4
+brew update
+brew install avr-gcc@7
+brew link --force avr-gcc@7
+brew install dfu-programmer
+brew install dfu-util
+brew install gcc-arm-none-eabi
+brew install avrdude
+brew cask install caskroom/drivers/qmk-toolbox
+
 # Casks
 brew cask install 1password
 brew cask install alfred
