@@ -12,6 +12,9 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until `.macos` has finished
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
+# Fixes by koen
+defaults write -g CGFontRenderingFontSmoothingDisabled -bool FALSE
+
 ###############################################################################
 # General UI/UX                                                               #
 ###############################################################################
@@ -20,9 +23,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 sudo defaults write /Library/Preferences/.GlobalPreferences.plist _HIEnableThemeSwitchHotKey -bool true
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "MacBook Koen"
-sudo scutil --set HostName "macbook-koen"
-sudo scutil --set LocalHostName "macbook"
+# sudo scutil --set ComputerName "MacBook Koen"
+# sudo scutil --set HostName "macbook-koen"
+# sudo scutil --set LocalHostName "macbook"
 
 # Set standby delay to 24 hours (default is 1 hour)
 sudo pmset -a standbydelay 86400

@@ -1,5 +1,4 @@
 flow-typed
-flow-upgrade
 npm-check
 yarn
 yarn-completions
