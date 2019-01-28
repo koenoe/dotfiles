@@ -60,6 +60,7 @@ brew cask install iterm2-beta
 brew cask install mounty
 brew cask install mpv
 brew cask install philips-hue-sync
+brew cask install plex-server
 brew cask install sabnzbd
 brew cask install skype
 brew cask install slack-beta
