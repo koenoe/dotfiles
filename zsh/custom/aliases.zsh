@@ -11,7 +11,7 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 # Tidal
 alias tidal="/Applications/TIDAL.app/Contents/MacOS/./TIDAL -features=frameless"
-alias tidal-stage="/Applications/TIDAL.app/Contents/MacOS/./TIDAL -url=https://desktop-stage.tidal.com -features=frameless"
+alias tidal-stage="/Applications/TIDAL.app/Contents/MacOS/./TIDAL -url=https://desktop.stage.tidal.com"
 
 # Couchpotato
 alias couchpotato="python /Applications/CouchPotatoServer/CouchPotato.py"
