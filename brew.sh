@@ -13,11 +13,10 @@ brew update
 
 # Extra taps
 brew tap
-brew tap caskroom/cask
-brew tap caskroom/fonts
-brew tap caskroom/versions
+brew tap homebrew/cask-cask
+brew tap homebrew/cask-fonts
+brew tap homebrew/cask-versions
 brew tap homebrew/core
-brew tap homebrew/dupes
 brew tap homebrew/services
 
 brew install coreutils
