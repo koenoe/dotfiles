@@ -13,7 +13,6 @@ brew update
 
 # Extra taps
 brew tap
-brew tap homebrew/cask-cask
 brew tap homebrew/cask-fonts
 brew tap homebrew/cask-versions
 brew tap homebrew/core
