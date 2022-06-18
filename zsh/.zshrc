@@ -8,7 +8,7 @@ export PATH="$PATH:/Users/koen/Projects/flutter/bin"
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH=$WEBOS_CLI_TV:$PATH
 
-export NPM_TOKEN="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"
+export NPM_TOKEN="asdasd"
 export GITHUB_NPM_TOKEN=$NPM_TOKEN
 export NPM_AUTH_TOKEN=$NPM_TOKEN
 
