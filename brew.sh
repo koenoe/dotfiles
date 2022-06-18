@@ -27,6 +27,7 @@ brew install python
 brew install speedtest-cli
 brew install ssh-copy-id
 brew install zsh
+brew install fnm
 
 
 # Casks

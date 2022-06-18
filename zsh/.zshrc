@@ -1,8 +1,16 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export WEBOS_CLI_TV="/opt/webOS_TV_SDK/CLI/bin"
+
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:/Users/koen/Projects/flutter/bin"
+export PATH="$PATH":"$HOME/.pub-cache/bin"
 export PATH=$WEBOS_CLI_TV:$PATH
+
+export NPM_TOKEN="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"
+export GITHUB_NPM_TOKEN=$NPM_TOKEN
+export NPM_AUTH_TOKEN=$NPM_TOKEN
 
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
@@ -76,11 +84,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+eval "$(fnm env)"
 
 # tabtab source for yarn package
 # uninstall by removing these lines or running `tabtab uninstall yarn`
-[[ -f /Users/koen/.nvm/versions/node/v10.15.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/koen/.nvm/versions/node/v10.15.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh
+# [[ -f /Users/koen/.nvm/versions/node/v10.15.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/koen/.nvm/versions/node/v10.15.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zshexport LG_WEBOS_TV_SDK_HOME="/opt/webOS_TV_SDK"
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"

@@ -13,8 +13,9 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 alias tidal="/Applications/TIDAL.app/Contents/MacOS/./TIDAL"
 alias tidal-stage="/Applications/TIDAL.app/Contents/MacOS/./TIDAL -url=https://desktop.stage.tidal.com"
 
-# Couchpotato
-alias couchpotato="python /Applications/CouchPotatoServer/CouchPotato.py"
+# Chromium
+alias chromium-41="open -na /Applications/Chromium\ 41.app --args --disable-web-security --user-data-dir='/tmp/chrome_dev' --auto-open-devtools-for-tabs"
+alias chromium-53="open -na /Applications/Chromium\ 53.app --args --disable-web-security --user-data-dir='/tmp/chrome_dev' --auto-open-devtools-for-tabs"
 
-# Chrome
-# alias chrome-canary="/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --force-dark-mode"
+# Git
+alias git-cleanup="git branch --merged | grep -v '\*\|master\|main\|develop' | xargs -n 1 git branch -d"
