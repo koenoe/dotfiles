@@ -16,19 +16,6 @@ When setting up a new Mac, you may want to install some common [Homebrew](https:
 ./brew.sh
 ```
 
-### Install Node Version Manager + Node LTS
-
-It's not advised to install NVM by using Homebrew, so:
-```bash
-./nvm/install.sh
-```
-
-### Rbenv configuration + latest stable Ruby
-
-```bash
-./rbenv/setup.sh
-```
-
 ### Install fonts
 
 Install some Powerline fonts for iTerm and VScode
@@ -58,10 +45,4 @@ Open the application and press `Shift + Alt + D`, use the following Gist ID to i
 
 ```bash
 d9dfa4e7c603aac4a84d5ae72c447eb8
-```
-
-### Hyper settings
-
-```bash
-./hyper/setup.sh
 ```

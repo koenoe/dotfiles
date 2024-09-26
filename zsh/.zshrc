@@ -2,13 +2,19 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export WEBOS_CLI_TV="/opt/webOS_TV_SDK/CLI/bin"
 
+export PATH=$WEBOS_CLI_TV:$PATH
+export PATH="/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$PATH:/Users/koen/Projects/flutter/bin"
-export PATH="$PATH":"$HOME/.pub-cache/bin"
-export PATH=$WEBOS_CLI_TV:$PATH
+export PATH="/opt/homebrew/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/sbin:$PATH"
+export PATH="/Users/koen/.npm-global/bin:$PATH"
+export PATH="/Users/koen/Library/Android/sdk/platform-tools:$PATH"
 
-export NPM_TOKEN="asdasd"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
+export JAVA_HOME="/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
+export NPM_TOKEN=""
 export GITHUB_NPM_TOKEN=$NPM_TOKEN
 export NPM_AUTH_TOKEN=$NPM_TOKEN
 
@@ -73,8 +79,6 @@ plugins=(
 	git
 	git-extras
   npm
-  nvm
-  rbenv
 	yarn
   z
   zsh-autosuggestions
@@ -86,8 +90,10 @@ source $ZSH/oh-my-zsh.sh
 
 eval "$(fnm env)"
 
-# tabtab source for yarn package
-# uninstall by removing these lines or running `tabtab uninstall yarn`
-# [[ -f /Users/koen/.nvm/versions/node/v10.15.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zsh ]] && . /Users/koen/.nvm/versions/node/v10.15.0/lib/node_modules/yarn-completions/node_modules/tabtab/.completions/yarn.zshexport LG_WEBOS_TV_SDK_HOME="/opt/webOS_TV_SDK"
-
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+# pnpm
+export PNPM_HOME="/Users/koen/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
