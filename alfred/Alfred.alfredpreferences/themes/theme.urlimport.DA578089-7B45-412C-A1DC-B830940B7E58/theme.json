@@ -1,0 +1,65 @@
+{
+  "alfredtheme" : {
+    "result" : {
+      "textSpacing" : 8,
+      "subtext" : {
+        "size" : 12,
+        "colorSelected" : "#FFFFFFB3",
+        "font" : "System",
+        "color" : "#00000098"
+      },
+      "shortcut" : {
+        "size" : 16,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#000000CB"
+      },
+      "backgroundSelected" : "#2B68A1FF",
+      "text" : {
+        "size" : 20,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System",
+        "color" : "#000000CB"
+      },
+      "iconPaddingHorizontal" : 10,
+      "roundness" : 15,
+      "paddingVertical" : 8,
+      "iconSize" : 40
+    },
+    "search" : {
+      "backgroundSelected" : "#2B68A1FF",
+      "paddingHorizontal" : 8,
+      "spacing" : 8,
+      "text" : {
+        "size" : 30,
+        "colorSelected" : "#FFFFFFFF",
+        "font" : "System Light",
+        "color" : "#000000CB"
+      },
+      "background" : "#00000000",
+      "roundness" : 0,
+      "paddingVertical" : 5
+    },
+    "window" : {
+      "color" : "#FBFFFF33",
+      "paddingHorizontal" : 10,
+      "width" : 660,
+      "borderPadding" : 0,
+      "borderColor" : "#00000000",
+      "blur" : 0,
+      "roundness" : 25,
+      "paddingVertical" : 10
+    },
+    "credit" : "Alfred Team",
+    "visualEffectMode" : 1,
+    "separator" : {
+      "color" : "#00000000",
+      "thickness" : 0
+    },
+    "scrollbar" : {
+      "color" : "#00000033",
+      "thickness" : 4
+    },
+    "name" : "Frosted Light Glass"
+  }
+}

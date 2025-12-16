@@ -40,7 +40,7 @@ brew install --cask discord
 brew install --cask github
 brew install --cask iterm2
 brew install --cask mounty
-brew install --cask privadovpn
+brew install --cask protonvpn
 brew install --cask rectangle
 brew install --cask slack
 brew install --cask spotify

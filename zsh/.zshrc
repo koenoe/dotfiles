@@ -1,20 +1,26 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+
 export WEBOS_CLI_TV="/opt/webOS_TV_SDK/CLI/bin"
 
-export PATH=$WEBOS_CLI_TV:$PATH
+export PATH="$WEBOS_CLI_TV:$PATH"
 export PATH="/sbin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
 export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="/Users/koen/.npm-global/bin:$PATH"
-export PATH="/Users/koen/Library/Android/sdk/platform-tools:$PATH"
+export PATH="$HOME/.npm-global/bin:$PATH"
+export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
 
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
-export JAVA_HOME="/opt/homebrew/opt/openjdk/libexec/openjdk.jdk/Contents/Home"
+export CONTEXT7_API_KEY=""
 export NPM_TOKEN=""
+export GITHUB_PERSONAL_ACCESS_TOKEN=""
+
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+export ANDROID_HOME="$HOME/Library/Android/sdk"
+export PNPM_HOME="$HOME/Library/pnpm"
+
+# aliases for NPM_TOKEN
 export GITHUB_NPM_TOKEN=$NPM_TOKEN
 export NPM_AUTH_TOKEN=$NPM_TOKEN
 
@@ -78,8 +84,8 @@ ZSH_CUSTOM=$HOME/dotfiles/zsh/custom
 plugins=(
 	git
 	git-extras
-  npm
-	yarn
+  aws
+  iterm2
   z
   zsh-autosuggestions
   zsh-syntax-highlighting
@@ -91,9 +97,10 @@ source $ZSH/oh-my-zsh.sh
 eval "$(fnm env)"
 
 # pnpm
-export PNPM_HOME="/Users/koen/Library/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+eval "$(rbenv init - --no-rehash zsh)"
