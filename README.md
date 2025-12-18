@@ -33,16 +33,16 @@ When setting up a new Mac, you may want to set some sensible macOS defaults:
 
 ### Oh My Zsh configuration
 
-Use my [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) configuration (after installing Oh My Zsh, of course)
+Use my [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) configuration (after installing Oh My Zsh, of course)
 
 ```bash
 ./zsh/setup.sh
 ```
 
-### Visual Studio Code settings
+### OpenCode configuration
 
-Open the application and press `Shift + Alt + D`, use the following Gist ID to import settings and extensions:
+Install [OpenCode](https://opencode.ai) configuration with [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) plugin:
 
 ```bash
-d9dfa4e7c603aac4a84d5ae72c447eb8
+./opencode/setup.sh
 ```
