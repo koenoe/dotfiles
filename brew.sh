@@ -11,11 +11,6 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 # Make sure we’re using the latest Homebrew.
 brew update
 
-# Extra taps
-brew tap
-brew tap homebrew/core
-brew tap homebrew/services
-
 brew install coreutils
 brew install findutils
 brew install moreutils
@@ -28,6 +23,12 @@ brew install speedtest-cli
 brew install ssh-copy-id
 brew install zsh
 brew install fnm
+brew install gh
+
+# AI tools
+brew install opencode
+brew install --cask claude
+brew install gh && gh extension install github/gh-copilot
 
 
 # Casks

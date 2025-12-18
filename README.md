@@ -1,47 +1,44 @@
 ## Installation
 
-### Using Git and the bootstrap script
-
-You can clone the repository wherever you want. (I like to keep it in `~/dotfiles`).
+### Clone
 
 ```bash
-git clone --recurse-submodules -j8 git@github.com:koenoe/dotfiles.git ~/dotfiles && cd ~/dotfiles
+git clone git@github.com:koenoe/dotfiles.git ~/dotfiles && cd ~/dotfiles
 ```
 
-### Install Homebrew formulae
+### Homebrew
 
-When setting up a new Mac, you may want to install some common [Homebrew](https://brew.sh/) formulae (after installing Homebrew, of course):
+Install [Homebrew](https://brew.sh/), then run:
 
 ```bash
 ./brew.sh
 ```
 
-### Install fonts
+### Zsh
 
-Install some Powerline fonts for iTerm and VScode
-```bash
-./fonts/install.sh
-```
-
-### Sensible macOS defaults
-
-When setting up a new Mac, you may want to set some sensible macOS defaults:
-
-```bash
-./.macos
-```
-
-### Oh My Zsh configuration
-
-Use my [Oh My Zsh](https://github.com/ohmyzsh/ohmyzsh) configuration (after installing Oh My Zsh, of course)
+Symlinks .zshrc and installs fonts (zinit + plugins auto-install on first shell):
 
 ```bash
 ./zsh/setup.sh
 ```
 
-### OpenCode configuration
+### Secrets
 
-Install [OpenCode](https://opencode.ai) configuration with [oh-my-opencode](https://github.com/code-yeongyu/oh-my-opencode) plugin:
+Create `~/.secrets` for sensitive environment variables (not tracked by git):
+
+```bash
+export CONTEXT7_API_KEY="your-key"
+export NPM_TOKEN="your-token"
+export GITHUB_PERSONAL_ACCESS_TOKEN="your-token"
+```
+
+### macOS defaults
+
+```bash
+./.macos
+```
+
+### OpenCode
 
 ```bash
 ./opencode/setup.sh
