@@ -1,4 +1,3 @@
-
 export WEBOS_CLI_TV="/opt/webOS_TV_SDK/CLI/bin"
 
 export PATH="$WEBOS_CLI_TV:$PATH"
@@ -95,6 +94,7 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 eval "$(fnm env)"
+eval "$(rbenv init - --no-rehash zsh)"
 
 # pnpm
 case ":$PATH:" in
@@ -102,5 +102,3 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
-
-eval "$(rbenv init - --no-rehash zsh)"
