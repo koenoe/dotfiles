@@ -17,9 +17,9 @@ function fs() {
   fi;
 }
 
-# Use locally installed Node
+# Run locally installed npm binaries
 function ne() {
-   $(npm bin)/$@
+   npx "$@"
 }
 
 # Simple calculator

@@ -1,31 +1,38 @@
-export WEBOS_CLI_TV="/opt/webOS_TV_SDK/CLI/bin"
-
-export PATH="$WEBOS_CLI_TV:$PATH"
-export PATH="/sbin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
-export PATH="/opt/homebrew/sbin:$PATH"
-export PATH="$HOME/.npm-global/bin:$PATH"
-export PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
-
-export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
-export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+# ===== Environment =====
 export ANDROID_HOME="$HOME/Library/Android/sdk"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk/Contents/Home"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk@17/include"
 export PNPM_HOME="$HOME/Library/pnpm"
 
+# ===== PATH (unified, unique entries only) =====
+typeset -U path
+path=(
+  /opt/homebrew/bin
+  /opt/homebrew/sbin
+  /opt/homebrew/opt/openjdk@17/bin
+  $HOME/.npm-global/bin
+  $HOME/Library/Android/sdk/platform-tools
+  $PNPM_HOME
+  /usr/local/bin
+  /usr/local/sbin
+  /sbin
+  $path
+)
+
+# ===== Secrets =====
 [[ -f ~/.secrets ]] && source ~/.secrets
 
 export GITHUB_NPM_TOKEN=$NPM_TOKEN
 export NPM_AUTH_TOKEN=$NPM_TOKEN
 
-# History
+# ===== History (generous limits - disk is cheap) =====
 HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
+HISTSIZE=100000
+SAVEHIST=100000
 setopt SHARE_HISTORY
 setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
 
 # ===== Zinit =====
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -51,7 +58,6 @@ zinit snippet OMZL::theme-and-appearance.zsh
 zinit snippet OMZP::git
 zinit snippet OMZP::git-extras
 zinit snippet OMZP::aws
-zinit snippet OMZP::z
 
 # Third-party plugins (turbo mode - deferred loading for speed)
 zinit light-mode wait lucid for \
@@ -71,11 +77,9 @@ source $ZSH_CUSTOM/aliases.zsh
 source $ZSH_CUSTOM/functions.zsh
 
 # ===== Tools =====
-eval "$(fnm env)"
-eval "$(rbenv init - --no-rehash zsh)"
 
-# pnpm
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
+# mise (universal version manager - replaces fnm, rbenv, pyenv, etc.)
+eval "$(mise activate zsh)"
+
+# zoxide (smarter cd)
+eval "$(zoxide init zsh)"

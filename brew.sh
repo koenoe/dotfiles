@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 # Install command-line tools using Homebrew.
+# This script is kept for backwards compatibility.
+# Prefer using: brew bundle install --file=~/dotfiles/Brewfile
 
 # Ask for the administrator password upfront.
 sudo -v
@@ -8,45 +10,16 @@ sudo -v
 # Keep-alive: update existing `sudo` time stamp until the script has finished.
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 
-# Make sure we’re using the latest Homebrew.
+# Make sure we're using the latest Homebrew.
 brew update
 
-brew install coreutils
-brew install findutils
-brew install moreutils
+# Install everything from Brewfile
+brew bundle install --file=~/dotfiles/Brewfile
 
-brew install fontconfig
-brew install git
-brew install git-extras
-brew install python
-brew install speedtest-cli
-brew install ssh-copy-id
-brew install zsh
-brew install fnm
-brew install gh
-
-# AI tools
-brew install opencode
-brew install --cask claude
-brew install gh && gh extension install github/gh-copilot
-
-
-# Casks
-brew install --cask 1password
-brew install --cask alfred
-brew install --cask bartender
-brew install --cask bruno
-brew install --cask daisydisk
-brew install --cask discord
-brew install --cask github
-brew install --cask iterm2
-brew install --cask mounty
-brew install --cask protonvpn
-brew install --cask rectangle
-brew install --cask slack
-brew install --cask spotify
-brew install --cask visual-studio-code
-brew install --cask whatsapp
+# Install gh-copilot extension
+gh extension install github/gh-copilot 2>/dev/null || true
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+echo "Done! Run 'brew bundle install --file=~/dotfiles/Brewfile' in the future to sync."

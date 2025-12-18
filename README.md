@@ -11,6 +11,12 @@ git clone git@github.com:koenoe/dotfiles.git ~/dotfiles && cd ~/dotfiles
 Install [Homebrew](https://brew.sh/), then run:
 
 ```bash
+brew bundle install --file=~/dotfiles/Brewfile
+```
+
+Or use the legacy script:
+
+```bash
 ./brew.sh
 ```
 
@@ -21,6 +27,18 @@ Symlinks .zshrc and installs fonts (zinit + plugins auto-install on first shell)
 ```bash
 ./zsh/setup.sh
 ```
+
+### mise (version manager)
+
+mise replaces fnm, rbenv, pyenv, etc. After installing via Brewfile:
+
+```bash
+mise install node@lts
+mise install ruby@latest
+mise use --global node@lts
+```
+
+mise auto-detects `.node-version`, `.nvmrc`, `.ruby-version`, `.python-version`, and `.tool-versions` files.
 
 ### Secrets
 

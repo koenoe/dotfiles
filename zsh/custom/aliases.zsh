@@ -11,3 +11,14 @@ alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[
 
 # Git
 alias git-cleanup="git branch --merged | grep -v '\*\|master\|main\|develop' | xargs -n 1 git branch -d"
+
+# Modern CLI replacements
+alias cat="bat --paging=never"
+alias ls="eza --icons"
+alias ll="eza -la --icons --git"
+alias la="eza -a --icons"
+alias lt="eza --tree --icons --level=2"
+alias find="fd"
+
+# zoxide (smarter cd)
+alias cd="z"
