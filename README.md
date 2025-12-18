@@ -56,6 +56,12 @@ export GITHUB_PERSONAL_ACCESS_TOKEN="your-token"
 ./.macos
 ```
 
+### Ghostty
+
+```bash
+./terminal/ghostty/setup.sh
+```
+
 ### OpenCode
 
 ```bash

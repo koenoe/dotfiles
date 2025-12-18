@@ -1,0 +1,34 @@
+# Monokai Soda theme for Ghostty
+# Converted from iTerm2 Monokai Soda color scheme
+
+# Background and foreground
+background = #1a1a1a
+foreground = #c4c5b5
+
+# Cursor
+cursor-color = #f7f8ec
+cursor-text = #c4c5b5
+
+# Selection
+selection-background = #343434
+selection-foreground = #c4c5b5
+
+# Normal colors (0-7)
+palette = 0=#1a1a1a
+palette = 1=#f4005f
+palette = 2=#98e024
+palette = 3=#fa8419
+palette = 4=#9d65ff
+palette = 5=#f4005f
+palette = 6=#58d1eb
+palette = 7=#c4c5b5
+
+# Bright colors (8-15)
+palette = 8=#625e4c
+palette = 9=#f4005f
+palette = 10=#98e024
+palette = 11=#e0d561
+palette = 12=#9d65ff
+palette = 13=#f4005f
+palette = 14=#58d1eb
+palette = 15=#f6f6ef
