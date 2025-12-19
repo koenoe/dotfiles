@@ -1,0 +1,20 @@
+#!/bin/bash
+# weather: get weather forecast using wttr.in
+# Usage: weather [location]
+# Examples: weather ng15, weather london, weather "new york"
+#
+# UK postcodes are auto-detected and ",uk" is appended for accuracy
+# See: https://github.com/chubin/wttr.in
+
+location="${1:-}"
+
+if [[ -z "$location" ]]; then
+  curl -s "wttr.in"
+else
+  # Check if it looks like a UK postcode (e.g., ng15, SW1A, EC1A 1BB)
+  if [[ "$location" =~ ^[A-Za-z]{1,2}[0-9][0-9A-Za-z]?([[:space:]]?[0-9][A-Za-z]{2})?$ ]]; then
+    curl -s "wttr.in/~${location}+uk"
+  else
+    curl -s "wttr.in/~${location}"
+  fi
+fi

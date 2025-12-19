@@ -7,6 +7,7 @@ export PNPM_HOME="$HOME/Library/pnpm"
 # ===== PATH (unified, unique entries only) =====
 typeset -U path
 path=(
+  $HOME/dotfiles/bin
   /opt/homebrew/bin
   /opt/homebrew/sbin
   /opt/homebrew/opt/openjdk@17/bin
@@ -50,6 +51,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 # Oh-my-zsh libs (lightweight, just the useful bits)
 zinit snippet OMZL::git.zsh
 zinit snippet OMZL::completion.zsh
+zinit snippet OMZL::directories.zsh
 zinit snippet OMZL::history.zsh
 zinit snippet OMZL::key-bindings.zsh
 zinit snippet OMZL::theme-and-appearance.zsh

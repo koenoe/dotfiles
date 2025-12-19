@@ -1,0 +1,69 @@
+#!/bin/bash
+# git-up: fetch and rebase all tracking branches
+# Replaces the deprecated PyGitUp python package
+
+set -e
+
+# Colors
+cyan='\033[36m'
+green='\033[32m'
+yellow='\033[33m'
+red='\033[31m'
+purple='\033[35m'
+reset='\033[0m'
+
+# Get the default remote (usually 'origin')
+remote=$(git remote | head -1)
+if [[ -z "$remote" ]]; then
+  echo "No remote configured"
+  exit 1
+fi
+
+echo "Fetching $remote"
+git fetch "$remote" --prune
+
+# Get current branch
+current_branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo "")
+
+# Process all local branches that have an upstream
+git for-each-ref --format='%(refname:short) %(upstream:short)' refs/heads | while read -r branch upstream; do
+  [[ -z "$upstream" ]] && continue
+
+  # Get ahead/behind counts
+  behind=$(git rev-list --count "$branch..$upstream" 2>/dev/null || echo 0)
+  ahead=$(git rev-list --count "$upstream..$branch" 2>/dev/null || echo 0)
+
+  if [[ "$behind" -eq 0 && "$ahead" -eq 0 ]]; then
+    echo -e "${green}$branch${reset}  up to date"
+  elif [[ "$behind" -gt 0 && "$ahead" -eq 0 ]]; then
+    # Can fast-forward
+    if [[ "$branch" == "$current_branch" ]]; then
+      echo -e -n "${green}$branch${reset}  "
+      if git rebase "$upstream" --quiet 2>/dev/null; then
+        echo -e "${cyan}fast-forwarding${reset}"
+      else
+        git rebase --abort 2>/dev/null || true
+        echo -e "${red}rebase failed, aborted${reset}"
+      fi
+    else
+      # Update non-current branch
+      git update-ref "refs/heads/$branch" "$upstream" 2>/dev/null
+      echo -e "${green}$branch${reset}  ${cyan}fast-forwarding${reset}"
+    fi
+  elif [[ "$behind" -gt 0 && "$ahead" -gt 0 ]]; then
+    # Diverged - needs rebase
+    if [[ "$branch" == "$current_branch" ]]; then
+      echo -e -n "${yellow}$branch${reset}  "
+      if git rebase "$upstream" --quiet 2>/dev/null; then
+        echo -e "${cyan}rebasing${reset}"
+      else
+        echo -e "${red}rebase failed, resolve conflicts and run 'git rebase --continue'${reset}"
+        exit 1
+      fi
+    else
+      echo -e "${yellow}$branch${reset}  ${purple}diverged (rebase manually)${reset}"
+    fi
+  else
+    echo -e "${green}$branch${reset}  ${purple}ahead of upstream${reset}"
+  fi
+done

@@ -1,0 +1,42 @@
+#!/bin/bash
+# git-cleanup: remove local branches whose remote tracking branch is gone
+# Useful after PRs are merged and remote branches are deleted
+
+set -e
+
+# Colors
+cyan='\033[36m'
+green='\033[32m'
+yellow='\033[33m'
+red='\033[31m'
+reset='\033[0m'
+
+# Get current branch to protect it
+current_branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo "")
+
+# Fetch with prune to update remote tracking state
+echo "Fetching and pruning..."
+git fetch --prune
+
+# Find branches with gone upstreams
+gone_branches=$(git for-each-ref --format='%(refname:short) %(upstream:track)' refs/heads | grep '\[gone\]' | awk '{print $1}')
+
+if [[ -z "$gone_branches" ]]; then
+  echo -e "${green}No stale branches to remove${reset}"
+  exit 0
+fi
+
+# Delete each gone branch
+echo ""
+for branch in $gone_branches; do
+  if [[ "$branch" == "$current_branch" ]]; then
+    echo -e "${yellow}$branch${reset}  skipped (currently checked out)"
+    continue
+  fi
+  
+  if git branch -d "$branch" 2>/dev/null; then
+    echo -e "${green}$branch${reset}  deleted"
+  else
+    echo -e "${yellow}$branch${reset}  not fully merged, use ${red}git branch -D $branch${reset} to force"
+  fi
+done
