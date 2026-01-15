@@ -34,9 +34,6 @@ for branch in $gone_branches; do
     continue
   fi
   
-  if git branch -d "$branch" 2>/dev/null; then
-    echo -e "${green}$branch${reset}  deleted"
-  else
-    echo -e "${yellow}$branch${reset}  not fully merged, use ${red}git branch -D $branch${reset} to force"
-  fi
+  git branch -D "$branch" 2>/dev/null
+  echo -e "${green}$branch${reset}  deleted"
 done
