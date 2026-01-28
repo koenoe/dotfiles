@@ -5,7 +5,10 @@
     "context7"
   ],
   "agents": {
-    "Sisyphus": {
+    "atlas": {
+      "model": "github-copilot/claude-opus-4.5"
+    },
+    "sisyphus": {
       "model": "github-copilot/claude-opus-4.5"
     },
     "oracle": {

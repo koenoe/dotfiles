@@ -7,6 +7,7 @@ export PNPM_HOME="$HOME/Library/pnpm"
 # ===== PATH (unified, unique entries only) =====
 typeset -U path
 path=(
+  $HOME/.local/bin
   $HOME/dotfiles/bin
   /opt/homebrew/bin
   /opt/homebrew/sbin
