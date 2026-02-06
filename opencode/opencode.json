@@ -17,12 +17,13 @@
         "CONTEXT7_API_KEY": "{env:CONTEXT7_API_KEY}"
       }
     },
-    "chrome-devtools": {
-      "type": "local",
-      "command": ["npx", "-y", "chrome-devtools-mcp@latest"]
+    "exa": {
+      "type": "remote",
+      "url": "https://mcp.exa.ai/mcp"
     },
-  },
-  "plugin": [
-    "oh-my-opencode"
-  ]
+    "grep_app": {
+      "type": "remote",
+      "url": "https://mcp.grep.app"
+    }
+  }
 }

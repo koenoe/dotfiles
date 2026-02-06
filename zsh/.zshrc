@@ -13,6 +13,7 @@ path=(
   /opt/homebrew/sbin
   /opt/homebrew/opt/openjdk@17/bin
   $HOME/.npm-global/bin
+  $HOME/Library/Android/sdk/cmdline-tools/latest/bin
   $HOME/Library/Android/sdk/platform-tools
   $PNPM_HOME
   /usr/local/bin
